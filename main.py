@@ -4,6 +4,8 @@ from database import engine , get_session
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from models import Course 
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 app = FastAPI()
 @app.on_event("startup")
